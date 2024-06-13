@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Jogo da Forca</h1>
+    </header>
+    <main>
+        <section id="forca">
+            <h2>Adivinhe a palavra</h2>
+            <p>{{ "".join(letras_descobertas) }}</p>
+            <p>Chances restantes: {{ chances }}</p>
+            <p>Letras erradas: {{ " ".join(letras_erradas) }}</p>
+            {% if chances > 0 and "_" in letras_descobertas %}
+            <form action="/forca" method="post">
+                <input type="text" name="tentativa" placeholder="Digite uma letra" maxlength="1" required>
+                <button type="submit">Enviar</button>
+            </form>
+            {% elif "_" not in letras_descobertas %}
+            <p>Você venceu, a palavra era: {{ palavra }}</p>
+            {% else %}
+            <p>Você perdeu, a palavra era: {{ palavra }}</p>
+            {% endif %}
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Meu Site
+		(Pedro Faria)</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home work</a></li>
+                <li><a href="/forca">Jogo da Forca</a></li> <!-- Link para o jogo da forca -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>Este é o conteúdo da página inicial.</p
+			<p>Amor não se transforma de hora em hora, Antes se afirma para a eternidade. Se isso é falso, e que é falso alguém provou, Eu não sou poeta, e ninguém nunca amou.</p
+            <form action="/processar" method="post">
+                <input type="text" name="dado" placeholder="Digite algo">
+                <button type="submit">Enviar</button>
+            </form>
+			<p>I love you Maritaquinha</p
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
+    </footer>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
